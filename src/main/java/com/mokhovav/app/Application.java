@@ -1,7 +1,11 @@
 package com.mokhovav.app;
 
-public class Application {
-    public static void main(String[] args) {
+import java.io.IOException;
 
+public class Application {
+
+    private static final String FILE_NAME = "jar/words.txt";
+    public static void main(String[] args) throws IOException {
+        HangmanFlow.doSession(FILE_NAME);
     }
 }

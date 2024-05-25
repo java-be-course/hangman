@@ -5,6 +5,7 @@ import org.apache.commons.lang3.StringUtils;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
+import java.util.Optional;
 
 public class FileUtils {
 
@@ -35,6 +36,17 @@ public class FileUtils {
 
         try (FileReader fr = new FileReader(fileName); BufferedReader br = new BufferedReader(fr)) {
             br.lines().skip(skip).limit(limit).forEach(handler::process);
+        }
+    }
+
+    public static Optional<String> findLine(String fileName, long skip) throws IOException, IllegalArgumentException {
+        checkFileName(fileName);
+        if (skip < 0) {
+            throw new IllegalArgumentException("Start line is negative");
+        }
+
+        try (FileReader fr = new FileReader(fileName); BufferedReader br = new BufferedReader(fr)) {
+            return br.lines().skip(skip).limit(1).findFirst();
         }
     }
 
