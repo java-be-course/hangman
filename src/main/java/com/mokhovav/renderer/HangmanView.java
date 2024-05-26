@@ -1,10 +1,10 @@
-package com.mokhovav.app;
+package com.mokhovav.renderer;
 
 import com.mokhovav.utils.ConsoleUtils;
 
-public class Hangman implements ViewRendering {
+public class HangmanView implements ViewAssembler {
     @Override
-    public void render() {
+    public void toView() {
         ConsoleUtils.println("______", "|    |","|","|","|","|");
     }
 }

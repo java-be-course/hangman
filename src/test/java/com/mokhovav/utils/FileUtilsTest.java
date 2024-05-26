@@ -27,13 +27,13 @@ public class FileUtilsTest {
     @Test()
     public void testExecuteForSeveralLines() throws IOException {
         FileUtils.executeForSeveralLines(TEXT_FILE_NAME, 3, 1, (str) -> {
-            assert str.equals("test");
+            assert str.equals("абазин");
         });
     }
 
     @Test()
     public void testFindLine() throws IOException {
-        assert FileUtils.findLine(TEXT_FILE_NAME, 3).orElseThrow().equals("test");
+        assert FileUtils.findLine(TEXT_FILE_NAME, 3).orElseThrow().equals("абазин");
     }
 
 }

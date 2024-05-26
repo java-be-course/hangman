@@ -1,5 +1,6 @@
 package com.mokhovav.app;
 
+import com.mokhovav.renderer.HangmanRenderer;
 import com.mokhovav.utils.FileUtils;
 
 import java.io.IOException;
@@ -7,12 +8,11 @@ import java.util.Random;
 
 public class HangmanFlow {
 
-    public static void doSession(String fileName) throws IOException {
+    public static void process(String fileName) throws IOException {
         startGame();
         long numberOfLines = FileUtils.getNumberOfLines(fileName);
         String word = getWord(fileName, numberOfLines);
-        System.out.println(word);
-        HangmanRendering.drawHangman(0);
+        HangmanRenderer.drawHangman(0);
     }
 
     private static void startGame() {
