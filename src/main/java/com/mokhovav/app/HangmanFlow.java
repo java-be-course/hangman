@@ -57,7 +57,7 @@ public class HangmanFlow {
 
     private static Optional<String> getCorrectNexLetterOfTheWord(String word) {
         ConsoleUtils.println("Введите букву");
-        Optional<String> letter = ConsoleUtils.nextLetter();
+        Optional<String> letter = ConsoleUtils.nextLetter().map(String::toLowerCase);
         return letter.filter(it -> checkLetterInTheWord(it, word));
     }
 
