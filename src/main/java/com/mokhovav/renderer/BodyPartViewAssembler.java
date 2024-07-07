@@ -2,12 +2,12 @@ package com.mokhovav.renderer;
 
 import com.mokhovav.utils.ConsoleUtils;
 
-public class BodyPartView implements ViewAssembler {
+public class BodyPartViewAssembler implements ViewAssembler {
     private final int posX;
     private final int posY;
     private final String view;
 
-    public BodyPartView(int posX, int posY, String view) {
+    public BodyPartViewAssembler(int posX, int posY, String view) {
         this.posX = posX;
         this.posY = posY;
         this.view = view;
