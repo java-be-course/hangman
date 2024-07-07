@@ -37,7 +37,7 @@ public class HangmanFlow {
                     break;
                 }
                 if (hangmanErrors.get() >= MAX_ERRORS) {
-                    ConsoleUtils.println("Вы не успели угадать слово. Но в следующий раз у Вас обязательно получится!");
+                    ConsoleUtils.println("Вы не успели угадать слово '" + word + "'. Но в следующий раз у Вас обязательно получится!");
                     break;
                 }
             }
